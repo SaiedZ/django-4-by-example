@@ -12,8 +12,3 @@ This project is the result of following the first chapter of the book "Django 4 
 - **Views**: Development of views to handle the logic of requesting and presenting data.
 - **Templates**: Creation of Django templates for rendering the blog content.
 - **URLs**: Definition of URL patterns for navigating the blog application.
-
-## Requirements
-
-- Python 3.8 or newer
-- Django 4.x
