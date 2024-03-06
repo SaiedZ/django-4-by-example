@@ -3,6 +3,14 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return (
+            super().get_queryset()
+            .filter(status=Post.Status.PUBLISHED)
+        )
+
+
 class Post(models.Model):
 
     class Status(models.TextChoices):
@@ -26,7 +34,13 @@ class Post(models.Model):
         default=Status.DRAFT
     )
 
+    objects = models.Manager()  # The default manager.
+    published = PublishedManager()  # Our custom manager.
+
     class Meta:
+        # by default the default manager is objects or the first defined
+        default_manager_name = 'objects'
+
         ordering = ['-publish']
         indexes = [
             models.Index(fields=['-publish'], name='publish_desc_index'),
