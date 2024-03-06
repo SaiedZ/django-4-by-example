@@ -25,3 +25,11 @@ def test_post_detail_view(client):
     response = client.get(url)
     assert response.status_code == 200
     assert 'Test Post' in response.content.decode()
+
+
+@pytest.mark.django_db
+def test_post_detail_view_failure(client):
+    url = reverse('blog:post_detail', args=[1])
+    response = client.get(url)
+    assert response.status_code == 404
+    assert 'Not Found' in response.content.decode()
