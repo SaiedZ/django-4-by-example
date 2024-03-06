@@ -13,6 +13,9 @@ This project is the result of following the first chapter of the book "Django 4 
 - **Templates**: Creation of Django templates for rendering the blog content.
 - **URLs**: Definition of URL patterns for navigating the blog application.
 
+
+## The request/response cycle
+
 ## Requirements
 
 - Python 3.8 or newer
