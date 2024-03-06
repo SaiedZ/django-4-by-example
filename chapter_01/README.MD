@@ -12,3 +12,12 @@ This project is the result of following the first chapter of the book "Django 4 
 - **Views**: Development of views to handle the logic of requesting and presenting data.
 - **Templates**: Creation of Django templates for rendering the blog content.
 - **URLs**: Definition of URL patterns for navigating the blog application.
+
+
+## Running Tests
+
+To run the tests for your Django project using a specific test database configuration, you can use the following command:
+
+```bash
+pytest --ds=mysite.settings_test
+```
