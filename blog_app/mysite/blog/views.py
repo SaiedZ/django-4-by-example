@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from django.core.paginator import (
@@ -5,6 +7,8 @@ from django.core.paginator import (
 )
 from django.views.decorators.http import require_POST
 from django.core.mail import send_mail
+
+from taggit.models import Tag
 
 from .models import Post, Comment
 from .forms import EmailPostForm, CommentForm
@@ -29,12 +33,32 @@ from django.core.mail import send_mail
 
 class PostListView(ListView):
     """
-    Alternative post list view
+    A class-based view to display a list of published posts.
     """
+    model = Post
     queryset = Post.published.all()
     context_object_name = 'posts'
     paginate_by = 1
     template_name = 'blog/post/list.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        tag_slug = self.kwargs.get('tag_slug')
+        if tag_slug is not None:
+            self.tag = get_object_or_404(Tag, slug=tag_slug)
+        else:
+            self.tag = None
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if self.tag:
+            queryset = queryset.filter(tags__in=[self.tag])
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tag'] = self.tag
+        return context
 
 
 def post_detail(request, year: int, month: int, day: int, post: str):
