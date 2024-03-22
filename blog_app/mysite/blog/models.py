@@ -19,7 +19,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, unique_for_date='publish')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
@@ -40,8 +40,14 @@ class Post(models.Model):
             models.Index(fields=["-publish"], name="publish_desc_index"),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
     def __repr__(self) -> str:
         return f"Post(title={self.title}, author={self.author}), id={self.id})"
+
+    def get_absolute_url(self) -> str:
+        return reverse(
+            "blog:post_detail",
+            args=[self.id],
+        )
