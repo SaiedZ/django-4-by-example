@@ -8,6 +8,9 @@ charset-normalizer==3.3.2
 click==8.1.7
 cookiecutter==2.6.0
 Django==4.2
+django-extensions==3.2.3
+django-taggit==3.0.0
+djhtml==3.0.6
 idna==3.6
 iniconfig==2.0.0
 Jinja2==3.1.3
