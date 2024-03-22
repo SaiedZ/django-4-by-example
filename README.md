@@ -8,18 +8,18 @@ Welcome to my personal repository for the book "Django 4 By Example" by Antonio 
 
 ## Repository Structure
 
-This repository is organized by chapters, with each chapter corresponding to a specific project or concept discussed in the book. Here's what you can expect:
+This repository is organized by project, with each corresponding to a specific project or concept discussed in the book. Here's what you can expect:
 
-- **Chapter 1 - Blog Application**: Basics of Django, including models, views, templates, and URLs.
-- **Chapter 2 - Social Website**: Diving into more advanced features like authentication, user relationships, and AJAX.
-- **Chapter 3 - E-commerce Site**: Building a fully functional online store.
+- **Project 1 - Blog Application**
+- **Project 2 - Social Website**
+- **Project 3 - E-commerce Site**
 - **...and more**.
 
-Each chapter directory contains its own README file, providing an overview of the chapter's project, key concepts covered, and specific modifications I've made to the original examples.
+Each project directory contains its own README file, providing an overview, key concepts covered, and specific modifications I've made to the original examples.
 
 ## Personal Modifications
 
-My modifications include additional features, refactored code for clarity and efficiency, and implementation of newer Django functionalities not covered in the book. These changes aim to enhance the learning experience and showcase how the projects can be adapted and extended.
+My modifications include additional features, refactored code for clarity and efficiency, and implementation of some Django functionalities not covered in the book. These changes aim to enhance the learning experience and showcase how the projects can be adapted and extended.
 
 ## Getting Started
 
