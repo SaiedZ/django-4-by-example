@@ -1,5 +1,6 @@
 from typing import Any
 from django.db.models.query import QuerySet
+from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from django.core.paginator import (
@@ -75,12 +76,24 @@ def post_detail(request, year: int, month: int, day: int, post: str):
     comments = post_obj.comments.filter(active=True)
     form = CommentForm()
 
+    post_tags_ids = post_obj.tags.values_list('id', flat=True)
+    similar_posts = (
+        Post.published
+            .filter(tags__in=post_tags_ids)
+            .exclude(id=post_obj.id)
+            .annotate(same_tags=Count('tags'))
+            .order_by('-same_tags', '-publish')[:4]
+    )
+
     return render(
         request,
         'blog/post/detail.html',
-        {'post': post_obj,
-         'comments': comments,
-         'form': form}
+        {
+            'post': post_obj,
+            'comments': comments,
+            'form': form,
+            'similar_posts': similar_posts,
+        }
     )
 
 
