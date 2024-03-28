@@ -12,6 +12,12 @@ This project is the result of following the first chapter of the book "Django 4 
 - **Views**: Development of views to handle the logic of requesting and presenting data.
 - **Templates**: Creation of Django templates for rendering the blog content.
 - **URLs**: Definition of URL patterns for navigating the blog application.
+- Implementing a tagging system by integrating a third-party application
+- Generating post recommendations using complex QuerySets
+- Creating custom Django template tags and filters
+- Creating a sitemap for search engines to crawl your site
+- Creating an RSS feed for users to subscribe to your blog
+- Building a search engine for your blog using the full-text search engine of PostgreSQL
 
 
 ## Running Tests
