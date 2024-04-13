@@ -1,4 +1,4 @@
-# Blog Application with Django 4 - Chapter 1
+# Blog Application with Django 4
 
 ## Overview
 
