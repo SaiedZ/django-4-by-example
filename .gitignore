@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 .vscode/
 media
+cert.crt
+cert.key
