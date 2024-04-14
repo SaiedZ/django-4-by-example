@@ -30,6 +30,7 @@ To run this project locally:
 2. Clone the repository to your local machine.
 3. Run `python manage.py migrate` to apply database migrations.
 4. Start the server with `python manage.py runserver`.
+> to run server the site through ` HTTPS ` use this command: `python manage.py runserver_plus --cert-file cert.crt`
 5. Navigate to `http://127.0.0.1:8000/` in your web browser to access the application.
 
 ## Conclusion
