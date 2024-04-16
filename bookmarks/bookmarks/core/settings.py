@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'social_django',
     'django_extensions',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -195,3 +196,7 @@ SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
 ]
+
+
+# Thumbnail debugging enabled
+# THUMBNAIL_DEBUG = True
