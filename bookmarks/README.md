@@ -18,6 +18,10 @@ This project is developed as part of the book "Django 4 by Examples". It focuses
 
 - **Email as Username**: Customization of the authentication process to use email addresses as the primary identifier for logging in, enhancing the user experience and aligning with modern web practices.
 - **Profile Management**: Development of a system where users can manage and update their profile information, promoting user engagement and personalization.
+- **Bookmarklet for Sharing Images**: Implementation of a JavaScript bookmarklet that allows users to share images from other websites directly to their bookmarks on your site.
+- **Image Thumbnails**: Creation of image thumbnails using the easy-thumbnails application, enhancing the visual quality and load times of images.
+- **AJAX for Dynamic Content Loading**: Utilization of AJAX views with the JavaScript Fetch API for asynchronous data handling, improving the responsiveness of the web application.
+- **Infinite Scroll Pagination**: Added infinite scroll pagination to the image list view to enhance the user experience by loading images continuously as the user scrolls down.
 
 ## Technologies Used
 
