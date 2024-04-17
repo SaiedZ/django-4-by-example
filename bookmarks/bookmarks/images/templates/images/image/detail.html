@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load thumbnail %}
+
 {% block title %}{{ image.title }}{% endblock %}
+
 {% block content %}
     <h1>{{ image.title }}</h1>
     {% comment %} <img src="{{ image.image.url }}" class="image-detail"> {% endcomment %}
@@ -41,4 +43,48 @@
             {% endfor %}
         </div>
     {% endwith %}
+{% endblock %}
+
+{% block domready %}
+    const url = '{% url "images:like" %}';
+    var options = {
+        method: 'POST',
+        headers: {'X-CSRFToken': csrftoken},
+        mode: 'same-origin'
+    }
+    document.querySelector('.like').addEventListener('click', function (e) {
+        e.preventDefault();
+        let likeButton = this;
+
+        // add request body
+
+        let formData = new FormData();
+        formData.append('id', likeButton.dataset.id);
+        formData.append('action', likeButton.dataset.action);
+        options['body'] = formData;
+
+        // send the http request
+
+        fetch(url, options)
+            .then(response => response.json())
+            .then(data => {
+                if (data['status'] === 'ok') {
+                    let previousAction = likeButton.dataset.action;
+
+                    // toggle button text and data-action
+                    let action = previousAction === 'like' ? 'unlike' : 'like';
+                    likeButton.dataset.action = action;
+                    likeButton.textContent = action.charAt(0).toUpperCase() + action.slice(1);
+
+                    // update like count
+                    let likeCount = document.querySelector('span.count .total');
+                    let totalLikes = parseInt(likeCount.textContent);
+                    likeCount.textContent = (previousAction === 'like' ? 1 : -1) + totalLikes;
+                }
+
+            })
+            .catch(error => console.error('Error:', error));
+
+    });
+
 {% endblock %}
