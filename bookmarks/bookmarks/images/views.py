@@ -54,7 +54,8 @@ def image_create(request):
 
 @login_required
 def image_detail(request, id, slug):
-    image = get_object_or_404(Image, id=id, slug=slug)
+    image = get_object_or_404(Image.objects.prefetch_related(
+        'users_like__profile').select_related('user__profile'), id=id, slug=slug)
     return render(
         request,
         'images/image/detail.html',
