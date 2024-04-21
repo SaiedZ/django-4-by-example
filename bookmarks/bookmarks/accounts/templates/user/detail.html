@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block title %}{{ user.get_full_name }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ user.get_full_name }}</h1>
+    <div class="profile-info">
+        <img src="{% thumbnail user.profile.photo 180x180 %}" class="user-detail">
+    </div>
+
+    {% with total_followers=user.followers.count %}
+        <span class="count">
+            <span class="total">{{ total_followers }}</span>
+            follower{{ total_followers|pluralize }}
+        </span>
+        <a
+            href="#"
+            data-id="{{ user.id }}"
+            data-action="{% if request.user in user.followers.all %}un{% endif %}follow"
+            class="follow button"
+        >
+            {% if request.user not in user.followers.all %}
+                Follow
+            {% else %}
+                Unfollow
+            {% endif %}
+        </a>
+        <div id="image-list" class="image-container">
+            {% include "images/image/list_images.html" with images=user.images_created.all %}
+        </div>
+    {% endwith %}
+
+{% endblock %}
+
+{% block domready %}
+    var url = '{% url "user_follow" %}';
+    var options = {
+    method: 'POST',
+    headers: {'X-CSRFToken': csrftoken},
+    mode: 'same-origin'
+    }
+
+    document.querySelector('a.follow').addEventListener('click', function(e) {
+    e.preventDefault();
+    let id = this.dataset.id;
+    var followButton = this;
+    let action = followButton.dataset.action;
+
+    let formData = new FormData();
+    formData.append('id', id);
+    formData.append('action', action);
+
+    options.body = formData;
+
+    fetch(url, options)
+    .then(response => response.json())
+    .then(data => {
+    if (data['status'] === 'ok') {
+    let updatedAction = action === 'follow' ? 'unfollow' : 'follow';
+    followButton.dataset.action = updatedAction;
+    followButton.textContent = updatedAction.charAt(0).toUpperCase() + updatedAction.slice(1);
+
+    let count = document.querySelector('.count .total');
+    let newCount = parseInt(count.textContent) + (action === 'follow' ? 1 : -1);
+    count.textContent = newCount;
+    } else {
+    console.log(data['error']);
+    }
+    })
+    .catch(error => console.log(error));
+    });
+
+
+{% endblock %}
