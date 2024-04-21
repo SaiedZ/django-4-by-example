@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from actions.utils import create_action
 from .forms import ImageCreateForm
 
 from .models import Image
@@ -26,17 +27,18 @@ def image_create(request):
         if form.is_valid():
             cd = form.cleaned_data
             try:
-                new_item = form.save(commit=False)
+                new_image = form.save(commit=False)
             except django_forms.ValidationError:
                 messages.error(
                     "The URL you provided is invalid. Please provide a valid URL."
                 )
                 return redirect('images:create')
 
-            new_item.user = request.user
-            new_item.save()
+            new_image.user = request.user
+            new_image.save()
+            create_action(request.user, 'bookmarked image', new_image)
             messages.success(request, 'Image added successfully')
-            return redirect(new_item.get_absolute_url())
+            return redirect(new_image.get_absolute_url())
     else:
         form = ImageCreateForm(data=request.GET)
 
@@ -71,9 +73,11 @@ def image_like(request):
 
     if image_id and action:
         try:
-            image = Image.prefetch_related('users_like').get(id=image_id)
+            image = Image.objects.prefetch_related(
+                'users_like').get(id=image_id)
             if action == 'like':
                 image.users_like.add(request.user)
+                create_action(request.user, 'likes', image)
             else:
                 image.users_like.remove(request.user)
             return JsonResponse({'status': 'ok'})
