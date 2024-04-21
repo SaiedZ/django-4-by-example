@@ -14,6 +14,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+from django.urls import reverse_lazy
+
 # Load environment variables
 load_dotenv()
 
@@ -33,6 +35,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
+INTERNAL_IPS = ['127.0.0.1',]
 
 # Application definition
 
@@ -47,13 +50,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'images.apps.ImagesConfig',
+    'actions',
 
     'social_django',
     'django_extensions',
     'easy_thumbnails',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -200,3 +206,8 @@ SOCIAL_AUTH_PIPELINE = [
 
 # Thumbnail debugging enabled
 # THUMBNAIL_DEBUG = True
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
