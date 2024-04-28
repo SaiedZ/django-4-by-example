@@ -12,9 +12,9 @@ from .constants import ACTION_DELAY
 def create_action(user, verb, target=None):
 
     now = timezone.now()
-    last_minute = now - datetime.timedelta(seconds=ACTION_DELAY)
+    action_delay_ago = now - datetime.timedelta(seconds=ACTION_DELAY)
     similar_actions = Action.objects.filter(
-        user=user, verb=verb, created__gte=last_minute
+        user=user, verb=verb, created__gte=action_delay_ago
     )
     if target is not None:
         target_ct = ContentType.objects.get_for_model(target)
