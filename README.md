@@ -10,7 +10,7 @@ Welcome to my personal repository for the book "Django 4 By Example" by Antonio 
 
 This repository is organized by project, with each corresponding to a specific project or concept discussed in the book. Here's what you can expect:
 
-- **Project 1 - Blog Application**
+- **[Project 1 - Blog Application](blog_app/README.md)**
 - **Project 2 - Social Website**
 - **Project 3 - E-commerce Site**
 - **...and more**.
