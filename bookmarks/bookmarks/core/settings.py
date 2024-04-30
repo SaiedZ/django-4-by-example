@@ -211,3 +211,10 @@ ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail',
                                         args=[u.username])
 }
+
+
+# Redis
+
+REDIS_HOST = os.getenv('REDIS_HOST')
+REDIS_PORT = os.getenv('REDIS_PORT')
+REDIS_DB = os.getenv('REDIS_DB')
