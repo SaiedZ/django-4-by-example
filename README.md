@@ -27,7 +27,7 @@ To explore these projects, clone the repository and navigate into the chapter yo
 
 ```bash
 git clone https://github.com/SaiedZ/django-4-by-example.git
-cd django-4-by-example-personal/<chapter-folder>
+cd django-4-by-example-personal/<project-folder>
 ```
 
 ## Links and Appendix
