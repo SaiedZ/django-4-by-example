@@ -10,8 +10,8 @@ Welcome to my personal repository for the book "Django 4 By Example" by Antonio 
 
 This repository is organized by project, with each corresponding to a specific project or concept discussed in the book. Here's what you can expect:
 
-- **Project 1 - Blog Application**
-- **Project 2 - Social Website**
+- **[Project 1 - Blog Application](blog_app/README.md)**
+- **[Project 2 - Social Website](bookmarks/README.md)**
 - **Project 3 - E-commerce Site**
 - **...and more**.
 
@@ -27,7 +27,7 @@ To explore these projects, clone the repository and navigate into the chapter yo
 
 ```bash
 git clone https://github.com/SaiedZ/django-4-by-example.git
-cd django-4-by-example-personal/<chapter-folder>
+cd django-4-by-example-personal/<project-folder>
 ```
 
 ## Links and Appendix

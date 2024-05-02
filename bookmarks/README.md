@@ -78,3 +78,17 @@ To run this project locally:
 ## Conclusion
 
 This project provides a comprehensive guide to building a secure and functional authentication system using Django 4, demonstrating the framework's capabilities in handling user-centric processes, custom user models, and integrating modern authentication mechanisms like social logins.
+
+
+## Screen shots
+
+### Home page
+<img width="1249" alt="image" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/e26119a8-8b53-4e45-bcf0-ef852bcbfdda">
+
+### Images 
+
+<img width="1231" alt="image" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/c0da1732-625a-4e4a-8f56-c8f5f0daff09">
+
+### Login
+
+<img width="1205" alt="image" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/d56ed4ae-0f30-447b-a9a3-993afe21d02f">
