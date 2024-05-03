@@ -1,4 +1,7 @@
 from django.db import models
+from django.urls import reverse
+
+from .behaviors import WithDefaultImageUrl
 
 
 class Category(models.Model):
@@ -15,11 +18,14 @@ class Category(models.Model):
         verbose_name = 'category'
         verbose_name_plural = 'categories'
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
+    def get_absolute_url(self) -> str:
+        return reverse('shop:product_list_by_category', args=[self.slug])
 
-class Product(models.Model):
+
+class Product(WithDefaultImageUrl, models.Model):
 
     category = models.ForeignKey(
         Category,
@@ -43,5 +49,8 @@ class Product(models.Model):
             models.Index(fields=['-created']),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
+
+    def get_absolute_url(self) -> str:
+        return reverse('shop:product_detail', args=[self.id, self.slug])
