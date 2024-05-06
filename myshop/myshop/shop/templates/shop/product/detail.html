@@ -1,8 +1,11 @@
 {% extends "shop/base.html" %}
+
 {% load static %}
+
 {% block title %}
     {{ product.name }}
 {% endblock %}
+
 {% block content %}
     <div class="product-detail">
         <img src="{{ product.get_image_url }}" alt="{{ product.name }}">
@@ -13,6 +16,11 @@
             </a>
         </h2>
         <p class="price">${{ product.price }}</p>
+        <form action="{% url 'cart:add' product.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
         {{ product.description|linebreaks }}
     </div>
 {% endblock %}
