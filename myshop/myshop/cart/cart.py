@@ -8,10 +8,6 @@ class Cart:
 
     def __init__(self, request):
         self.session = request.session
-        # cart = self.session.get(settings.CART_SESSION_ID)
-        # if not cart:
-        #     cart = self.session[settings.CART_SESSION_ID] = {}
-        # self.cart = cart
         self.cart = self.session.setdefault(settings.CART_SESSION_ID, {})
 
     def add(self, product, quantity=1, update_quantity=False):
@@ -46,7 +42,6 @@ class Cart:
         from the database.
         """
         product_ids = self.cart.keys()
-        # get the product objects and add them to the cart
         products = Product.objects.filter(id__in=product_ids)
         cart = self.cart.copy()
         for product in products:
