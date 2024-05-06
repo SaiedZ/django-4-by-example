@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
 
     'debug_toolbar',
 ]
@@ -136,3 +137,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_IMAGE_URL = f'{STATIC_URL}img/no_image.png'
+
+
+CART_SESSION_ID = 'cart'
