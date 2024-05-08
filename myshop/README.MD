@@ -86,3 +86,9 @@ This project provides a comprehensive guide to building a secure and functional 
 
 
 ## Screen shots
+
+### RabbitMQ dashboard
+
+
+### Flower dashboard
+
