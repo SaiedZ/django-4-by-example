@@ -89,6 +89,8 @@ This project provides a comprehensive guide to building a secure and functional 
 
 ### RabbitMQ dashboard
 
+<img width="926" alt="Capture d'écran 2024-05-08 175826" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/ef315163-b2db-4f88-841d-f16feae6e80a">
+
 
 ### Flower dashboard
 
