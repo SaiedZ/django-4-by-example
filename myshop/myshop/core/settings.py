@@ -141,7 +141,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-DEFAULT_IMAGE_URL = f'/{STATIC_URL}img/no_image.png'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DEFAULT_IMAGE_URL = f'/{STATIC_URL}img/no_image.png'
 
 CART_SESSION_ID = 'cart'
