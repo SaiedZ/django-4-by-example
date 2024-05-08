@@ -94,3 +94,10 @@ This project provides a comprehensive guide to building a secure and functional 
 
 ### Flower dashboard
 
+![Capture d'écran 2024-05-08 175925](https://github.com/SaiedZ/django-4-by-example/assets/90851774/442a5801-e2cf-489b-9a1e-a55756481e73)
+
+
+### Site
+
+<img width="895" alt="Capture d'écran 2024-05-08 180710" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/7c1ee23d-e230-4fe6-9851-f70e95f5a26a">
+<img width="904" alt="Capture d'écran 2024-05-08 180744" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/7d9b8e71-5c60-406b-aedd-3f3bce4ae4e1">
