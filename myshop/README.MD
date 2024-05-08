@@ -81,9 +81,7 @@ Use asynchronous tasks not only for time-consuming processes, but also for other
 
 
 ## Conclusion
-
-This project provides a comprehensive guide to building a secure and functional authentication system using Django 4, demonstrating the framework's capabilities in handling user-centric processes, custom user models, and integrating modern authentication mechanisms like social logins.
-
+🤔
 
 ## Screen shots
 
