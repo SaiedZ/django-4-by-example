@@ -11,7 +11,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+from django.urls import reverse_lazy
+
+# Load environment variables
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,3 +156,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_IMAGE_URL = f'/{STATIC_URL}img/no_image.png'
 
 CART_SESSION_ID = 'cart'
+
+# Stripe settings
+
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_API_VERSION = os.getenv('STRIPE_API_VERSION')
