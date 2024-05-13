@@ -99,3 +99,4 @@ Use asynchronous tasks not only for time-consuming processes, but also for other
 
 <img width="895" alt="Capture d'écran 2024-05-08 180710" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/7c1ee23d-e230-4fe6-9851-f70e95f5a26a">
 <img width="904" alt="Capture d'écran 2024-05-08 180744" src="https://github.com/SaiedZ/django-4-by-example/assets/90851774/7d9b8e71-5c60-406b-aedd-3f3bce4ae4e1">
+![image](https://github.com/SaiedZ/django-4-by-example/assets/90851774/7a8e6df1-2b33-4b97-8094-584c8aa25a16)
