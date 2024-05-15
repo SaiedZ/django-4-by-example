@@ -7,16 +7,20 @@ This project is developed as part of the book "Django 4 by Example". It focuses 
 
 ## Key Concepts Covered
 
-- **E-commerce Fundamentals**: The creation of a product catalog and a dynamic shopping cart that persists across user sessions.
-- **Asynchronous Task Processing**: Utilizing Celery with RabbitMQ to manage background tasks such as order processing.
-- **Context Processing**: Implementing a custom context processor to make the shopping cart globally available across all templates.
-- **Order Management**: Developing a form for handling order placements within the application.
-
+- **E-commerce Fundamentals**: Creation of a product catalog and a dynamic shopping cart that persists across user sessions.
+- **Asynchronous Task Processing**: Utilization of Celery with RabbitMQ to manage background tasks such as order processing.
+- **Context Processing**: Implementation of a custom context processor to make the shopping cart globally available across all templates.
+- **Order Management**: Development of a form for handling order placements within the application.
+- **Payment Integration**: Integration of the Stripe payment gateway to process transactions securely.
+- **Webhook Handling**: Creation of a webhook endpoint to receive and handle payment notifications from Stripe.
 
 ## Additional Features
 
 - **Security Enhancements**: Instructions for securing RabbitMQ in production by managing user roles and permissions.
-- **Template Integration**: Demonstrating Django’s template inheritance to streamline the user interface.
+- **Template Integration**: Demonstration of Django’s template inheritance to streamline the user interface.
+- **Administration Customization**: Customization of the Django admin site with specific views and templates for enhanced usability.
+- **Order Export to CSV**: Development of a custom administration action to export order data to CSV files.
+- **PDF Generation**: Learning how to generate PDF files with WeasyPrint and attach them to emails for order confirmations or receipts.
 
 
 ## Technologies Used
