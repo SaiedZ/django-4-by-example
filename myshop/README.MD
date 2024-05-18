@@ -13,6 +13,8 @@ This project is developed as part of the book "Django 4 by Example". It focuses 
 - **Order Management**: Development of a form for handling order placements within the application.
 - **Payment Integration**: Integration of the Stripe payment gateway to process transactions securely.
 - **Webhook Handling**: Creation of a webhook endpoint to receive and handle payment notifications from Stripe.
+- **Coupon system**: Creation of a coupon system using Django sessions and integrated it with Stripe.
+- **Recommendation engine**: Creation of a recommendation engine using Redis to recommend products that are usually purchased together.
 
 ## Additional Features
 
@@ -78,6 +80,16 @@ celery -A core flower
 ```
 
 Open ` http://localhost:5555/dashboard ` in your browser. You will be able to see the active Celery workers and asynchronous task statistics.
+
+
+## Running Redis
+
+Redis is used for the recommendation engine:
+
+```bash
+docker run -it --rm --name redis -p 6379:6379 redis
+```
+
 
 ## Why using asynchronous tasks
 
