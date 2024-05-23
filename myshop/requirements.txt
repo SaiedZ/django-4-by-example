@@ -1,5 +1,7 @@
 amqp==5.2.0
 asgiref==3.5.2
+async-timeout==4.0.3
+autopep8==2.1.0
 billiard==3.6.4.0
 Brotli==1.1.0
 celery==5.2.7
@@ -11,8 +13,10 @@ click-didyoumean==0.3.1
 click-plugins==1.1.1
 click-repl==0.3.0
 cssselect2==0.7.0
+Deprecated==1.2.14
 Django==4.1.13
 django-debug-toolbar==4.3.0
+django-rosetta==0.9.8
 djhtml==3.0.6
 flower==1.2.0
 fonttools==4.51.0
@@ -24,8 +28,10 @@ kombu==5.3.7
 packaging==24.0
 Pillow==9.2.0
 pluggy==1.5.0
+polib==1.2.0
 prometheus_client==0.20.0
 prompt-toolkit==3.0.43
+pycodestyle==2.11.1
 pycparser==2.22
 pydyf==0.10.0
 pyphen==0.15.0
@@ -33,6 +39,7 @@ pytest==8.2.0
 pytest-django==4.8.0
 python-dotenv==1.0.1
 pytz==2024.1
+redis==4.3.4
 requests==2.31.0
 six==1.16.0
 sqlparse==0.4.2
@@ -44,4 +51,5 @@ vine==5.1.0
 wcwidth==0.2.13
 weasyprint==56.1
 webencodings==0.5.1
+wrapt==1.16.0
 zopfli==0.2.3
