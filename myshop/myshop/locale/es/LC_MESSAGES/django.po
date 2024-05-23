@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: cart/forms.py:12 cart/templates/cart/detail.html:16
 #: orders/templates/orders/order/to_pdf.html:24
@@ -28,7 +29,8 @@ msgstr "Cantidad"
 msgid "Your shopping cart"
 msgstr "Tu carrito de compras"
 
-#: cart/templates/cart/detail.html:14 payment/templates/payment/process.html:12
+#: cart/templates/cart/detail.html:14
+#: payment/templates/payment/process.html:12
 msgid "Image"
 msgstr "Imagen"
 

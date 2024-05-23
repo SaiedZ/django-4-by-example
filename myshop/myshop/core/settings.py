@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'coupons.apps.CouponsConfig',
 
     'debug_toolbar',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
