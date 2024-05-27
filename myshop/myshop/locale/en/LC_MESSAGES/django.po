@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-23 18:40+0200\n"
+"POT-Creation-Date: 2024-05-27 17:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,12 +101,28 @@ msgstr ""
 msgid "Checkout"
 msgstr ""
 
-#: core/settings.py:143
+#: core/settings.py:144
 msgid "English"
 msgstr ""
 
-#: core/settings.py:144
+#: core/settings.py:145
 msgid "Spanish"
+msgstr ""
+
+#: core/urls.py:13
+msgid "cart/"
+msgstr ""
+
+#: core/urls.py:14
+msgid "orders/"
+msgstr ""
+
+#: core/urls.py:15
+msgid "payment/"
+msgstr ""
+
+#: core/urls.py:16
+msgid "coupons/"
 msgstr ""
 
 #: coupons/forms.py:6
@@ -190,6 +206,10 @@ msgstr ""
 msgid "Pending payment"
 msgstr ""
 
+#: orders/urls.py:9
+msgid "create/"
+msgstr ""
+
 #: payment/templates/payment/canceled.html:4
 msgid "Payment canceled"
 msgstr ""
@@ -232,6 +252,18 @@ msgstr ""
 
 #: payment/templates/payment/process.html:61
 msgid "Pay now"
+msgstr ""
+
+#: payment/urls.py:9
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "completed/"
+msgstr ""
+
+#: payment/urls.py:11
+msgid "canceled/"
 msgstr ""
 
 #: shop/templates/shop/base.html:18

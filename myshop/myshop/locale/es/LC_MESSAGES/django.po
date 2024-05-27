@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-23 18:40+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2024-05-27 17:20+0200\n"
+"PO-Revision-Date: 2024-05-27 15:24+0000\n"
+"Last-Translator:   <deias@g.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -106,13 +106,31 @@ msgstr "Continuar comprando"
 msgid "Checkout"
 msgstr "Finalizar compra"
 
-#: core/settings.py:143
+#: core/settings.py:144
 msgid "English"
 msgstr "Inglés"
 
-#: core/settings.py:144
+#: core/settings.py:145
 msgid "Spanish"
 msgstr "Español"
+
+#: core/urls.py:13
+msgid "cart/"
+msgstr "carro/"
+
+#: core/urls.py:14
+msgid "orders/"
+msgstr "pedidos/"
+
+#: core/urls.py:15
+#| msgid "Pending payment"
+msgid "payment/"
+msgstr "pago/"
+
+#: core/urls.py:16
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "cupones/"
 
 #: coupons/forms.py:6
 msgid "Coupon"
@@ -201,6 +219,10 @@ msgstr "Pagado"
 msgid "Pending payment"
 msgstr "Pago pendiente"
 
+#: orders/urls.py:9
+msgid "create/"
+msgstr "crear/"
+
 #: payment/templates/payment/canceled.html:4
 msgid "Payment canceled"
 msgstr "Pago cancelado"
@@ -247,6 +269,19 @@ msgstr ""
 #: payment/templates/payment/process.html:61
 msgid "Pay now"
 msgstr "Pagar ahora"
+
+#: payment/urls.py:9
+msgid "process/"
+msgstr "pago/"
+
+#: payment/urls.py:10
+msgid "completed/"
+msgstr "terminado/"
+
+#: payment/urls.py:11
+#| msgid "Payment canceled"
+msgid "canceled/"
+msgstr "cancelado/"
 
 #: shop/templates/shop/base.html:18
 msgid "Your cart"
