@@ -60,6 +60,7 @@ INSTALLED_APPS = [
 
     'debug_toolbar',
     'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -154,6 +155,18 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+# django-parler settings
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
 
 
 # Static files (CSS, JavaScript, Images)
