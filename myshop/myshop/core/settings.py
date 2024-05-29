@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'rosetta',
     'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
