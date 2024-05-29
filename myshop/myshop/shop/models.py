@@ -1,19 +1,23 @@
 from django.db import models
 from django.urls import reverse
+from parler.models import TranslatableModel, TranslatedFields
 
 from .behaviors import WithDefaultImageUrl
 
 
-class Category(models.Model):
+class Category(TranslatableModel):
 
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    translations = TranslatedFields(
+        name=models.CharField(max_length=200),
+        slug=models.SlugField(max_length=200, unique=True)
+    )
 
     class Meta:
-        ordering = ['name']
-        indexes = [
-            models.Index(fields=['name']),
-        ]
+        # https://django-parler.readthedocs.io/en/latest/compatibility.html#the-ordering-meta-field
+        # ordering = ['name']
+        # indexes = [
+        #     models.Index(fields=['name']),
+        # ]
 
         verbose_name = 'category'
         verbose_name_plural = 'categories'
@@ -25,15 +29,17 @@ class Category(models.Model):
         return reverse('shop:product_list_by_category', args=[self.slug])
 
 
-class Product(WithDefaultImageUrl, models.Model):
+class Product(WithDefaultImageUrl, TranslatableModel):
 
     category = models.ForeignKey(
         Category,
         related_name='products',
         on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200)
+    translations = TranslatedFields(
+        name=models.CharField(max_length=200),
+        slug=models.SlugField(max_length=200)
+    )
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -42,10 +48,11 @@ class Product(WithDefaultImageUrl, models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['name']
+        # https://django-parler.readthedocs.io/en/latest/compatibility.html#the-ordering-meta-field
+        # ordering = ['name']
         indexes = [
-            models.Index(fields=['id', 'slug']),
-            models.Index(fields=['name']),
+            # models.Index(fields=['id', 'slug']),
+            # models.Index(fields=['name']),
             models.Index(fields=['-created']),
         ]
 
