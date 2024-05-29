@@ -16,6 +16,7 @@ cssselect2==0.7.0
 Deprecated==1.2.14
 Django==4.1.13
 django-debug-toolbar==4.3.0
+django-localflavor==3.1
 django-parler==2.3
 django-rosetta==0.9.8
 djhtml==3.0.6
@@ -39,6 +40,7 @@ pyphen==0.15.0
 pytest==8.2.0
 pytest-django==4.8.0
 python-dotenv==1.0.1
+python-stdnum==1.20
 pytz==2024.1
 redis==4.3.4
 requests==2.31.0
