@@ -13,7 +13,7 @@ This repository is organized by project, with each corresponding to a specific p
 - **[Project 1 - Blog Application](blog_app/README.md)**
 - **[Project 2 - Social Website](bookmarks/README.md)**
 - **[Project 3 - E-commerce Site](myshop/README.MD)**
-- **...and more**.
+- **[Project 4 - E-Learning Platform](educa/README.md)**
 
 Each project directory contains its own README file, providing an overview, key concepts covered, and specific modifications I've made to the original examples.
 
