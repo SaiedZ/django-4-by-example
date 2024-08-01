@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
 
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
@@ -20,6 +21,9 @@ class Subject(models.Model):
 
 class Course(models.Model):
 
+    students = models.ManyToManyField(User,
+                                      related_name='courses_joined',
+                                      blank=True)
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name='courses_created',
