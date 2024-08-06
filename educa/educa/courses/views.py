@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -235,9 +236,11 @@ class ModuleOrderView(CsrfExemptMixin,
         )
 
 
-class ContentOrderView(CsrfExemptMixin,
-                       JsonRequestResponseMixin,
-                       View):
+class ContentOrderView(
+        CsrfExemptMixin,
+        JsonRequestResponseMixin,
+        View
+):
 
     def post(self, request):
         for id, order in self.request_json.items():
@@ -257,9 +260,13 @@ class CourseListView(TemplateResponseMixin, View):
     template_name = 'courses/course/list.html'
 
     def get(self, request, subject=None):
-        subjects = Subject.objects.annotate(
-            total_courses=Count('courses')
-        )
+        subjects = cache.get('all_subjects')
+        if subjects is None:
+            subjects = Subject.objects.annotate(
+                total_courses=Count('courses')
+            )
+            cache.set('all_subjects', subjects)
+
         courses = Course.objects.annotate(
             total_modules=Count('modules')
         )
