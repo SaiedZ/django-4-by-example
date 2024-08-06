@@ -17,6 +17,7 @@ This project is developed as part of the book "Django 4 by Example". It focuses 
 - **Student Registration and Enrollment**: Development of a system for student registration and management of course enrollments.
 - **Content Rendering and Caching**: Techniques for rendering different kinds of content and caching using Django’s cache framework.
 
+
 ## Additional Features
 
 - **Security Enhancements**: Implementation of a robust authentication system and restricted access using groups and permissions.
@@ -29,13 +30,35 @@ This project is developed as part of the book "Django 4 by Example". It focuses 
 - **Django 4**: Leveraging the latest features of Django 4 to build a robust e-learning platform.
 - **JavaScript**: Implementing dynamic drag-and-drop functionality for course content management.
 - **Django Groups and Permissions**: Using Django’s built-in groups and permissions system to secure access to different views and functionalities.
+- **Redis and Memcached**: Implementing caching mechanisms to improve performance.
 
 ## Running the Project
 
 To run this project locally:
 
-1. Ensure you have Python, Django, and Django Extensions installed.
+1. Ensure you have Python, Django, and Docker installed.
 2. Clone the repository to your local machine.
-3. Run `python manage.py migrate` to apply database migrations.
-4. Start the server with `python manage.py runserver`.
-5. Navigate to `http://127.0.0.1:8000/` in your web browser to access the application.
+3. Create and start the Redis service using Docker:
+    ```sh
+    docker-compose up -d redis
+    ```
+4. Install the required Python packages:
+    ```sh
+    pip install -r requirements.txt
+    ```
+5. Apply database migrations:
+    ```sh
+    python manage.py migrate
+    ```
+6. Start the Django development server:
+    ```sh
+    python manage.py runserver
+    ```
+7. Navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your web browser to access the application.
+
+
+## Monitoring Redis with Django Redisboard
+
+You can monitor your Redis server using Django Redisboard. Django Redisboard adds Redis statistics to the Django administration site. You can find more information about Django Redisboard at [https://github.com/ionelmc/django-redisboard](https://github.com/ionelmc/django-redisboard).
+
+Run the development server and open [http://127.0.0.1:8000/admin/redisboard/redisserver/add/](http://127.0.0.1:8000/admin/redisboard/redisserver/add/) in your browser to add a Redis server to monitor. Under the Label, enter `redis`, and under URL, enter `redis://localhost:6379/0`. Click on SAVE. The information will be saved to the database, and you will be able to see the Redis configuration and metrics on the Django administration site.
